@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="TictactoeApp">
   <head>
     <title>TIC TAC TOE</title>
     <link rel="stylesheet" type="text/css" href="css/reset.min.css">
@@ -7,20 +7,21 @@
   </head>
   <body>
 
-     <div id="game" ng-app="">
+     <div id="game">
        <ul id="teams">
         <li>
-          <img src="">
+          <img src="../img/bert.jpg" />
           <h2>Team <span class="team"></span></h2>
           <h3 class="player"></h3>
         </li>
         <li>
-          <img src="">
+          <img src="../img/ernie.jpg" />
           <h2>Team <span class="team"></span></h2>
           <h3 class="player"></h3>
         </li>
       </ul>
       <div id="board">
+
       </div>
       <div id="results">
         <h1></h1>
@@ -32,6 +33,7 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   <script src="js/underscore.min.js"></script>
   <script src="js/tictactoe.js"></script>
+  <script src="http://sugarjs.com/release/current/sugar.min.js"></script>
   </body>
 </html>
 
