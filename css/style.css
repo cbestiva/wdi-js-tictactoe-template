@@ -15,7 +15,6 @@ img {
   display:block;
 }
 #game {
-  display:none;
   position:absolute;
   width:480px;
   height:480px;
@@ -46,7 +45,7 @@ img {
   font-size:100px;
 }
 .tile.combo {
-  color:#b80000;
+  color:#b80000  ;
 }
 #tile0,
 #tile1,
@@ -113,7 +112,6 @@ img {
   font-size:30px;
 }
 #overlay {
-  display:none;
   position:fixed;
   top:0;
   left:0;
@@ -123,7 +121,6 @@ img {
   z-index:-1;
 }
 #results {
-  display:none;
   position:fixed;
   z-index:2;
   top:50%;
@@ -166,7 +163,7 @@ img {
   padding:10px 40px;
   text-decoration:none;
   border:0;
-  background:#b80000;
+  background:#b80000  ;
 }
 #results button:hover,
 #results button:active {
