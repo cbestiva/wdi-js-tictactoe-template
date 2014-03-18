@@ -21,18 +21,18 @@
       </ul>
       <div id="board">
         <div ng-repeat="tile in tiles">
-          <div id="tile{{tile.tileNum}}" class="tile" ng-click="handle_click(tile)">{{tile.tilevalue}}</div>
+          <div id="tile{{tile.tileNum}}" ng-class="{tile: start, combo: tile.tileWin}" ng-click="handle_click(tile)">{{tile.tilevalue}}</div>
         </div>
       </div>
       <div id="results" ng-show="is_win(current_player)">
         <h1>Congratulations {{current_player.name}}, you win!</h1>
         <span class="image"><img src={{current_player.img_url}} /></span>
-        <button ng-click="">play again</button>
+        <button ng-click="hide_indicators()">play again</button>
       </div>
       <div id="results" ng-show="is_tie(current_player)">
         <h1>It's a tie!</h1>
         <span class="image"><img src="img/rubberduckie.jpg" /></span>
-        <button ng-click="">play again</button>
+        <button ng-click="hide_indicators()">play again</button>
       </div>
     </div>
 

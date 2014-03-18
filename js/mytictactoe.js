@@ -31,10 +31,12 @@ TictactoeApp.controller("TictactoeAppCtrl", [
       newTile = {
         tilevalue: "",
         tileNum: i,
-        active: false
+        active: false,
+        tileWin: false
       };
-      i += 1;
       $scope.tiles.push(newTile);
+      $scope.start = true;
+      i += 1;
     }
     $scope.handle_click = function(tile) {
       if (tile.active === false) {
@@ -58,6 +60,10 @@ TictactoeApp.controller("TictactoeAppCtrl", [
         check_combo = current_player.combo.intersect($scope.win_combos[i]);
         i += 1;
         if (check_combo.length === 3) {
+          console.log(check_combo);
+          check_combo.forEach(function(index) {
+            return $scope.tiles[index].tileWin = true;
+          });
           return true;
         }
       }
@@ -73,5 +79,6 @@ TictactoeApp.controller("TictactoeAppCtrl", [
         }
       }
     };
+    $scope.hide_indicators = function() {};
   }
 ]);

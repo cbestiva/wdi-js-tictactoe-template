@@ -35,9 +35,12 @@ TictactoeApp.controller("TictactoeAppCtrl", ["$scope",
         tilevalue: ""
         tileNum: i
         active: false
+        tileWin: false
       }
-      i += 1
       $scope.tiles.push(newTile)
+      $scope.start = true      
+      i += 1
+
 
     $scope.handle_click = (tile)->
       if tile.active is false
@@ -63,6 +66,9 @@ TictactoeApp.controller("TictactoeAppCtrl", ["$scope",
         check_combo = current_player.combo.intersect($scope.win_combos[i])
         i += 1
         if check_combo.length is 3
+          console.log(check_combo)
+          check_combo.forEach (index)->
+            $scope.tiles[index].tileWin = true
           return true
       return
 
@@ -74,6 +80,10 @@ TictactoeApp.controller("TictactoeAppCtrl", ["$scope",
         i += 1
         if check_combo.length isnt 3 and current_player.combo.length is 5
           return true
+      return
+
+    $scope.hide_indicators = ()->
+
       return
 
     return
